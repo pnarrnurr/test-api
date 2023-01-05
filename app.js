@@ -2,7 +2,7 @@ const fastify = require('fastify')({ logger: true });
 const fastifyPlugin = require('fastify-plugin');
 const fastifyCors = require('@fastify/cors');
 const { routes } = require('./routes/index');
-const { options } = require('./config/swagger');
+// const { options } = require('./config/swagger');
 const { dbConnect } = require('./config/database');
 
 const main = async () => {
@@ -29,7 +29,7 @@ const main = async () => {
                 console.log("preHandler")
                 if (!req.url.startsWith('/api')) throw Error('Forbidden');
 
-                // if (req.url.startsWith('/swagger')) return;
+                // if (req.url.startsWith('/api/users')) return;
                 // if (req.url.startsWith('/api/users/:id')) return;
 
             } catch (error) {
