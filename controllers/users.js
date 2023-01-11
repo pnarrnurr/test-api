@@ -28,7 +28,6 @@ exports.get = async (req, res, next) => {
 exports.create = async (req, res, next) => {
     let { name, username, email, password } = req.body;
     if (req.body) {
-        console.log(req.body)
         const users = await collectionConnect('users');
         let condition = name.length > 0 && username.length > 0 && email.length > 0 && password.length > 0;
         if (!condition) {
@@ -132,7 +131,6 @@ exports.getAll = async (req, res, next) => {
     let result = await users.find({}).toArray();
     if (result.length > 0) {
         result = await result.map(item => {
-            console.log(item)
             item.id = item._id;
             delete item._id;
             return item

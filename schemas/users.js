@@ -79,8 +79,7 @@ exports.updateUserSchema = {
             name: { type: 'string' },
             username: { type: 'string' },
             email: { type: 'string', format: 'email' }
-        },
-        required: ["name", "username", "email"]
+        }
     },
     response: {
         200: {
