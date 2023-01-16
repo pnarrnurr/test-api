@@ -8,6 +8,8 @@ const main = async () => {
     try {
         dbConnect();
 
+        fastify.register(require('@fastify/websocket'));
+
         fastify.register(fastifyPlugin(async (fastify) => {
             routes.forEach((route, index) => {
                 fastify.route(route)

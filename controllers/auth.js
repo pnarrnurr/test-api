@@ -58,6 +58,14 @@ exports.login = async (req, res, next) => {
                 }
             };
         }
+        return {
+            result: null,
+            result_message: {
+                type: 'error',
+                title: 'Error',
+                message: 'Kullanıcı adı veya şifre yanlış!'
+            }
+        }
     }
 }
 
@@ -94,7 +102,7 @@ exports.logout = async (req, res, next) => {
     }
 }
 
-exports.authentication = async (req, res, next) => {
+exports.authorization = async (req, res, next) => {
     let token = null;
     let user = null;
     if (token == null && req.headers['authorization']) {

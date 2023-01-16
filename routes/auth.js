@@ -11,7 +11,7 @@ exports.routes = [
     {
         method: 'GET',
         url: '/api/logout',
-        preHandler: authController.authentication,
+        preHandler: authController.authorization,
         handler: authController.logout
     }
 ]
